@@ -7,3 +7,27 @@
 # Java compilados
 bin/
 *.class
+*.jar
+*.war
+*.ear
+
+# =====================
+# Logs
+# =====================
+*.log
+
+# =====================
+# Sistema operativo
+# =====================
+.DS_Store
+Thumbs.db
+
+# =====================
+# Variables de entorno
+# =====================
+.env
+
+# =====================
+# Frontend (si usas npm)
+# =====================
+node_modules/
