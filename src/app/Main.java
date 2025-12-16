@@ -20,10 +20,13 @@ public class Main {
         
         System.out.print("Escribe una breve descripción sobre ti: ");
         String descripcionUsuario = scanner.nextLine();
-
+        
+        System.out.println("Que color de fondo quieres? (Red, blue, yellow...)");
+        String colorFondo = scanner.nextLine();
+        
         // 2. CREAR EL OBJETO (Instanciar la clase)
         // Aquí usamos el constructor que creaste en Persona.java
-        Persona miPersona = new Persona(nombreUsuario, profesionUsuario, descripcionUsuario);
+        Persona miPersona = new Persona(nombreUsuario, profesionUsuario, descripcionUsuario, colorFondo);
 
         // 3. GENERAR EL HTML Y GUARDARLO
         // El método generarHTML() nos devuelve el String gigante

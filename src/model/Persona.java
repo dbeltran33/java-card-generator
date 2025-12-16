@@ -8,12 +8,14 @@ public class Persona {
 		    private String nombre;
 		    private String profesion;
 		    private String descripcion;
+		    private String color;
 		    
 		    // 2. CONSTRUCTOR (El método que se ejecuta al hacer 'new Persona(...)')
-		    public Persona(String nombre, String profesion, String descripcion) {
+		    public Persona(String nombre, String profesion, String descripcion, String color) {
 		        this.nombre = nombre;
 		        this.profesion = profesion;
 		        this.descripcion = descripcion;
+		        this.color = color;
 		    }
 		    
 		    // 3. MÉTODOS (Lo que la persona "sabe hacer")
@@ -26,8 +28,8 @@ public class Persona {
 		            <head>
 		                <meta charset="UTF-8">
 		                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		                <title>Perfil de %s</title>
-		                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+		                <title>Perfil de %s</title> 
+		                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 		            </head>
 		            <body class="bg-light">
 		            
@@ -39,7 +41,7 @@ public class Persona {
 		              <div class="row justify-content-center">
 		                <div class="col-12 col-md-6 col-lg-4">
 		                  
-		                  <div class="card shadow"> 
+		                  <div class="card shadow" style="background-color: %s;">
 		                    <img src="https://placehold.co/600x400" class="card-img-top" alt="Foto de perfil">
 		                    
 		                    <div class="card-body text-center">
@@ -54,11 +56,10 @@ public class Persona {
 		              </div>
 		            </div>
 		            
-		            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="..." crossorigin="anonymous"></script>    
+		            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>    
 		            </body>
 		            </html>
-		            """.formatted(this.nombre, this.nombre, this.profesion, this.descripcion);
+		            """.formatted(this.nombre, this.color, this.nombre, this.profesion, this.descripcion);
 		    }
-		}
-	
+}
 
