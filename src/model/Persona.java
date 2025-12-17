@@ -1,5 +1,7 @@
 package model;
 
+import java.nio.file.DirectoryNotEmptyException;
+
 public class Persona {
 		    
 	
@@ -9,19 +11,28 @@ public class Persona {
 		    private String profesion;
 		    private String descripcion;
 		    private String color;
+		    private String contacto;
 		    
 		    // 2. CONSTRUCTOR (El método que se ejecuta al hacer 'new Persona(...)')
-		    public Persona(String nombre, String profesion, String descripcion, String color) {
+		    public Persona(String nombre, String profesion, String descripcion, String color, String contacto) {
 		        this.nombre = nombre;
 		        this.profesion = profesion;
 		        this.descripcion = descripcion;
 		        this.color = color;
+		        this.contacto = contacto;
 		    }
 		    
 		    // 3. MÉTODOS (Lo que la persona "sabe hacer")
 		    
 		    // Este método devuelve un String gigante con tu HTML y las variables incrustadas
 		    public String generarHTML() {
+		    	
+		    	String htmlBoton ="";
+		    	
+		    	if (!this.contacto.isBlank()) {
+		    		htmlBoton = "<a href='" + this.contacto + "' class='btn btn-primary' target='_blank'>Contactar en LinkedIn</a>";
+		    	}
+		    	
 		        return """
 		            <!DOCTYPE html>
 		            <html lang="es">
@@ -48,7 +59,9 @@ public class Persona {
 		                      <h5 class="card-title">%s</h5> 
 		                      <h6 class="card-subtitle mb-2 text-muted">%s</h6>
 		                      <p class="card-text">%s</p>
-		                      <a href="#" class="btn btn-primary">Contactar</a>
+		                      
+		                      %s
+		                      
 		                    </div>
 		                  </div>
 		                  
@@ -59,7 +72,7 @@ public class Persona {
 		            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>    
 		            </body>
 		            </html>
-		            """.formatted(this.nombre, this.color, this.nombre, this.profesion, this.descripcion);
+		            """.formatted(this.nombre, this.color, this.nombre, this.profesion, this.descripcion, this.contacto, htmlBoton);
 		    }
 }
 
