@@ -12,8 +12,16 @@ public class Main {
         // 1. PEDIR DATOS AL USUARIO
         System.out.println("=== GENERADOR DE TARJETAS DE PRESENTACIÓN ===");
         
-        System.out.print("Introduce tu nombre completo: ");
-        String nombreUsuario = scanner.nextLine();
+        String nombreUsuario = "";
+        
+        do {
+        	System.out.println("Escribe tu nombre completo (obligatorio): ");
+        	nombreUsuario = scanner.nextLine();
+        	
+        	if (nombreUsuario.isBlank()) {
+        		System.out.println("Error, el campo no puede estar vacio");
+        	}
+        } while (nombreUsuario.isBlank());
         
         System.out.print("Introduce tu profesión: ");
         String profesionUsuario = scanner.nextLine();
@@ -26,6 +34,8 @@ public class Main {
         
         System.out.println("Añade tu linkedin para contactar:");
         String contactoLinkedin = scanner.nextLine();
+        
+        
         
         // 2. CREAR EL OBJETO (Instanciar la clase)
         // Aquí usamos el constructor que creaste en Persona.java
